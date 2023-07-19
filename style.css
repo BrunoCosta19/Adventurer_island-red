@@ -1,0 +1,329 @@
+* {
+    font-family: 'Press Start 2P', cursive;
+}
+body {
+    background-color: #232323;
+}
+h1 {
+    margin: 0;
+}
+button {
+    border: 0;
+    font-size: 16px;
+}
+button:hover, #viewNft:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+#root {
+    display: inline-block; 
+    position: relative;
+}
+#overlappingDiv {
+    background-color: black; 
+    position:absolute; 
+    top:0; left: 0; bottom: 0; right: 0; 
+    opacity: 0; 
+    pointer-events: none; 
+    z-index: 10;
+}
+#mapOverlay {
+    position: absolute; 
+    bottom:20px; 
+    left: 20px;
+}
+#mapControlsOverlay {
+    position: absolute; 
+    bottom:20px; 
+    right: 20px;
+}
+#moveButtonUp {
+    position: relative;
+    left: 40%; right: 40%;
+}
+#startScreen, #startScreen2 {
+    position: absolute; 
+    top:0; left: 0; bottom: 0; right: 0; 
+    background-color: grey;
+}
+#startScreen {
+    z-index: 40;
+}
+#startScreen2 {
+    z-index: 30;
+}
+#nameBox, #classBox, #nftBox {
+    position: absolute; 
+    top: 25%; left: 25%; right: 25%; 
+    font-size: 24px; 
+    height: 50px;
+}
+#nftBox {
+    top: 40%;
+}
+#chooseName {
+    font-size: 24px;
+}
+#chooseNft {
+    font-size: 18px;
+}
+#startButton, #heroButton {
+    position: absolute; 
+    top: 65%; left: 35%; right: 35%; 
+    font-size: 24px; 
+    height: 50px; 
+    border: black solid 4px;
+}
+#heroButton {
+    top: 75%; 
+}
+#viewNft, a {
+    color: blue;
+    font-size: 14px;
+}
+#nftScreen {
+    display: none;
+    position: absolute;
+    top: 10%; left: 10%; right: 10%; bottom: 10%;
+    background-color: white;
+    border: #232323 double 4px;
+    z-index: 35;
+}
+.spinner { 
+    display: "none";
+    /* top: 40%; */
+    width: 40px; 
+    height: 40px; 
+    border: 5px solid #333; 
+    border-top: 5px solid #fff; 
+    border-radius: 50%; 
+    animation: spin 1s linear infinite; 
+    } 
+    @keyframes spin { 
+    0% { transform: rotate(0deg); } 
+    100% { transform: rotate(360deg); } 
+}
+#nftScreenContainer {
+    bottom: 30%; left: 10%; right: 10%;
+    overflow: auto;
+}
+#showNfts {
+    display: flex;
+    overflow: auto;
+}
+.userNft { /* TODO: FIX NFT GALLERY CSS */
+    border: #232323 solid 2px;
+    background: #ddd;
+    padding: 5px; 
+    margin: 5px;
+}
+#userNftName {
+    font-size: 12px;
+}
+#userNftImage {
+    width: 200px;
+    border: #232323 solid 1px;
+}
+#userNftAttr {
+    display: none;
+}
+#selectedNft {
+    margin: 10px;
+    padding: 10px;
+}
+#nftScreenButton {
+    position: absolute;
+    bottom: 20%; left: 65%; right: 15%;
+    border: #232323 solid 2px;
+}
+#userInterface {
+    display: none;
+}
+#enemyHealthBox, #playerHealthBox {
+    background-color: white; 
+    width: 250px; 
+    position: absolute; 
+    border: 4px black solid; 
+    padding: 12px;
+}
+#enemyHealthBox {
+    top: 50px; left: 50px; 
+}
+#playerHealthBox {
+    top: 300px; right: 50px;
+}
+#enemyName, #playerName {
+    font-size: 16px
+}
+#enemyHealthBar, #playerHealthBar {
+    height: 5px; 
+    background-color: green; 
+    position: absolute; 
+    top: 0; left: 0; right: 0;
+}
+#greyBox {
+    height: 5px; 
+    background-color: #ccc; 
+    margin-top: 10px;
+}
+#healthWrapper {
+    position: relative;
+}
+#dialogueWrapper {
+    background-color: white; 
+    height: 140px; 
+    position: absolute; 
+    bottom: 0; right: 0; left: 0; 
+    border-top: 4px solid black; 
+    display: flex;
+}
+#dialogueBox {
+    position:absolute; 
+    top: 0; right: 43%; bottom: 0; left: 0; 
+    background: white; 
+    padding: 12px; 
+    display: none; 
+    cursor: pointer;
+}
+#attacksBox {
+    width: 66.66%; 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+}
+#logWrapper {
+    /* display: flex; 
+    align-items: center; 
+    justify-content: center;  */
+    width: 50%; 
+    border-left: 4px solid black;
+    /* https://www.w3schools.com/cssref/pr_pos_overflow.php */
+    overflow: auto;
+    /* https://stackoverflow.com/questions/18614301/keep-overflow-div-scrolled-to-bottom-unless-user-scrolls-up */
+    display: flex; 
+    flex-direction: column-reverse;
+}
+#battleLog {
+    text-decoration: underline;
+    margin: 10px;
+    font-size: 12px;
+}
+h6 {
+    margin: 5px;
+    margin-left: 10px;
+    font-size: 10px;
+}
+#levelUpOverlay, #penaltyOverlay {
+    display: none;
+    position: absolute;
+    top: 10%; left: 10%; right: 10%; bottom: 10%;
+    background-color: white;
+    border: #232323 double 4px;
+    z-index: 20;
+}
+#levelUpTitle, #penaltyTitle {
+    position: absolute;
+    top: 10%; left: 10%; right: 10%; bottom: 80%;
+    text-align: center;
+}
+#levelUpText, #penaltyText {
+    position: absolute;
+    top: 20%; left: 10%; right: 10%; bottom: 45%;
+}
+#levelUpTextMore {
+    position: absolute;
+    top: 55%; left: 10%; right: 10%; bottom: 25%;
+}
+#classBox {
+    top: 40%; 
+}
+#chooseClass {
+    font-size: 18px;
+    display: block;
+    margin: 0 auto;
+}
+#chooseStats {
+    display: flex;
+}
+#chooseStatStrs, #chooseStatsAgi, #chooseStatsWis, #addStr, #addAgi, #addWis {
+    padding: 10px;
+    margin: 10px;
+}
+#levelUpButton, #penaltyButton {
+    position: absolute;
+    top: 80%; left: 40%; right: 40%; bottom: 10%;
+    border: #232323 solid 2px;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.toolTip .toolTipText {
+  visibility: hidden;
+  width: 150px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 50;
+  /* bottom: 125%;
+  left: 50%; */
+  bottom: 50%;
+  left: 64%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.toolTip .toolTipText::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.toolTip:hover .toolTipText {
+  visibility: visible;
+  opacity: 1;
+}
+
+#showStats {
+    /* display: none; */
+    margin-left: 150px;
+    margin-right: 150px;
+    font-size: 14px;
+    border:#232323 solid 1px;
+    text-align: center;
+}
+#showStatsTitle {
+    font-size: 14px;
+    text-decoration: underline;
+    padding: 3px;
+    margin: 3px;
+
+}
+#showStatsStr, #showStatsAgi, #showStatsWis {
+    padding: 2px;
+    margin: 2px;
+}
+
+#addStatsBox {
+    display: none;
+}
